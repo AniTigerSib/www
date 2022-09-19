@@ -1,0 +1,19 @@
+* {
+    font-family: "Times New Roman", Times, serif;
+}
+
+body {
+    background: url(../img/background_image.png) no-repeat ;
+    background-size: cover;
+    margin: 0;
+}
+
+.header {
+    background-color: #7E999F;
+    height: 80px;
+}
+
+.header img{
+    width: 15%;
+    margin-left: 1%;
+}
