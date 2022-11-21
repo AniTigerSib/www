@@ -1,3 +1,9 @@
+*, ::after ::before
+{
+    box-sizing: inherit;
+}
+
+
 @font-face {
     font-family: 'Sansation';
     src: url("../fonts/Sansation-Regular.ttf")
@@ -20,13 +26,14 @@ body {
     min-height: calc(100vh - 70px);
 }
 
-.header--fixed {
+/*.header--fixed {
+    
+}*/
+
+.header {
     left: 0;
     position: fixed;
     top: 0;
-}
-
-.header {
     width: 100%;
     z-index: 999;
     display: flex;
@@ -83,12 +90,17 @@ body {
     margin-left: 0.8%;
 }
 
-footer {
-    background-color: #151E23;
-    padding: 10px;
-    height: 220px;
+.footer {
+    background: #151E23;
+    padding: 20px 0;
     display: flex;
     flex-direction: column;
+}
+
+.footer__container {
+    margin: auto;
+    max-width: 1550px;
+    padding: 0 20px;
 }
 
 .footer_up {
