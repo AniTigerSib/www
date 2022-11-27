@@ -11,11 +11,27 @@
     <body>
         <div class="page-layout">
             <div class="header"> <!--header--fixed-->
-                <img class="logo_main" src="img/logo.png" alt="logo">
-                <div class="header_links_container">
-                    <a class="header_link" href="#">Лекции</a>
-                    <a class="header_link" href="#">Практики</a>
-                    <a class="header_link" href="#">Тесты</a>
+                <div class="header__content">
+                    <a class="header_logo" href="#">
+						<img src="img/logo.png" alt="logo">
+					</a>
+					<nav class="header-navigation">
+						<ul class="header-navigation__list">
+							<li>
+								<a class="header-navigation__link" href="#">Лекции</a>
+							</li>
+							<li>
+								<a class="header-navigation__link" href="#">Практики</a>
+							</li>
+							<li>
+								<a class="header-navigation__link" href="#">Тесты</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="header__auth-btns">
+						<a class="header__button" href="#">Вход</a>
+						<a class="header__button header__register-btn">Регистрация</a>
+					</div>
                 </div>
             </div>
             <div class="sign_up_container_main">
