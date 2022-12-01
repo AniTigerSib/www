@@ -9,7 +9,8 @@
 }
 
 body {
-    background: url(../img/background_image.png) no-repeat;
+    background-color: #fff;
+    /*background: url(../img/background_image.png) no-repeat;*/
     background-size: cover;
 	font-family: 'Open Sans', sans-serif;
     font-style: normal;
@@ -47,11 +48,11 @@ body {
 
 .header__content {
     align-items: center;
-    display: flex;
     height: 100%;
+    max-width: 1000px;
+    display: flex;
     justify-content: space-between;
     margin: auto;
-	max-width: 1200px;
 }
 
 .header_logo {
@@ -72,9 +73,13 @@ body {
 }
 
 .header-navigation__link {
-	color: #FFFFFF;
+	color: rgb(235, 235, 235);
     font-size: 18px;
 	text-decoration: none;
+}
+
+.header__auth-btns {
+    margin-left: 15px;
 }
 
 .header__button {
@@ -92,6 +97,51 @@ body {
 	padding-left: 10px;
 	padding-right: 10px;
 	text-decoration: none;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 40
+}
+
+.header__dt-switch {
+    margin-left: 10px;
+}
+
+input[type="checkbox"] {
+    position: relative;
+    width: 30px;
+    height: 16px;
+    -webkit-appearance: none;
+    outline: none;
+    background-color: #bababa;
+    border-radius: 20px;
+    transition: .5s;
+}
+
+input:checked[type="checkbox"] {
+    background: rgb(65, 65, 65);
+}
+
+input[type="checkbox"]:before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    transform: scale(1.1);
+    border-radius: 50%;
+    background: #fff;
+    top: 1.5px;
+    left: 2px;
+    transition: .5s;
+}
+
+input:checked[type="checkbox"]:before {
+    background: rgb(255, 255, 255);
+    left: 15px;
 }
 
 .sign_up_container_main {
