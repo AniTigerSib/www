@@ -8,7 +8,13 @@
     src: url("../fonts/Italiana-Regular.ttf");
 }
 
+@font-face {
+    font-family: 'PFBeauSansPro'
+    src: url("../fonts/PFBeauSansPro")
+}
+
 body {
+    margin: 0;
     background-color: #fff;
     /*background: url(../img/background_image.png) no-repeat;*/
     background-size: cover;
@@ -21,8 +27,10 @@ body {
 .page-layout {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     margin-top: 70px;
     min-height: calc(100vh - 70px);
+    width: 100%;
 }
 
 /*.header--fixed {
@@ -108,7 +116,13 @@ body {
 }
 
 .header__dt-switch {
-    margin-left: 10px;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header__dt-switch__icons img {
+    width: 20px;
 }
 
 input[type="checkbox"] {
@@ -144,52 +158,91 @@ input:checked[type="checkbox"]:before {
     left: 15px;
 }
 
+.page-layout__content{
+    flex: 1 0 100%;
+}
+
 .sign_up_container_main {
-    position: relative;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    min-height: 100%;
+    display: flex;
+    flex-direction: column;
     margin: 20px;
 }
 
-.sign_up_panel_main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #FFFFFF;
-    padding: 20px;
-    max-width: 500px;
+.auth-wrapper{
     border: solid 1px #30404d;
-    border-radius: 8px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.auth-section{
+    padding: 15px 0;
+}
+
+.rel_title{
+    margin-top: 6px;
+    text-align: center;
+}
+
+.rel_title_label{
+    font-size: 18px;
+    padding: 0 20px;
+    position: relative;
+    top: -10px;
+}
+
+.labeled-form-input{
+    font-size: 14px;
+    font-weight: 400;
+    font-family: PFBeauSansPro, sans-serif;
+}
+
+.form-input{
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.42857143;
+    padding: 5px;
+    width: 100%;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.08);
+    margin-top: 5px;
+    margin-bottom: 25px;
 }
 
 .footer {
     background: #151E23;
     padding: 20px 0;
+    justify-self: flex-end;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .footer__container {
     margin: auto;
-    max-width: 1550px;
     padding: 0 20px;
 }
 
-.footer_up {
+.footer__container-floor {
+    max-width: 1550px;
+    min-width: 900px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    margin-bottom: 10px;
 }
 
-.about_project {
+.footer__container-section {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.about_project p {
+.footer__container-section p {
     font-family: 'Sansation';
     font-style: normal;
     font-weight: 700;
@@ -199,7 +252,7 @@ input:checked[type="checkbox"]:before {
     margin-top: 0;
 }
 
-.about_project a {
+.footer__container-section a {
     text-decoration: none;
     font-family: 'Sansation';
         font-style: normal;
@@ -211,35 +264,7 @@ input:checked[type="checkbox"]:before {
         margin-bottom: 2px;
 }
 
-.media {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.media p {
-    font-family: 'Sansation';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 34px;
-    line-height: 36px;
-    color: #FFFFFF;
-    margin-top: 0;
-}
-
-.media a {
-    text-decoration: none;
-    font-family: 'Sansation';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 22px;
-    color: #FFFFFF;
-    margin-top: 2px;
-    margin-bottom: 2px;
-}
-
-.contacts {
+.footer__container-media-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -267,20 +292,13 @@ input:checked[type="checkbox"]:before {
         margin-bottom: 0;
 }
 
-.tel_exp {
+.tel__exp {
     font-family: 'Sansation';
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
         line-height: 16px;
         color: #FFFFFF;
-        margin-top: 0;
-}
-
-.footer_down {
-    display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
         margin-top: 0;
 }
 

@@ -8,6 +8,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+        <link href="fonts/PFBeauSansPro/stylesheet.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <div class="page-layout">
@@ -31,25 +32,71 @@
 					</nav>
 					<div class="header__auth-btns">
 						<a class="header__button" href="#">Вход</a>
-						<a class="header__button">Регистрация</a>
+						<a class="header__button" href="#">Регистрация</a>
 					</div>
                     <div class="header__dt-switch">
-                        
+                        <div class="header__dt-switch__icons">
+                            <img src="img/globe-light.png">
+                        </div>
                         <input type="checkbox">
+                        <div class="header__dt-switch__icons">
+                            <img src="img/globe-light-outline.png">
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="sign_up_container_main">
-                <div class="sign_up_panel_main">
-                    <div class="">
+            <div class="page-layout__content">
+                <div class="sign_up_container_main">
+                    <div class="auth-wrapper">
+                        <div class="auth-section">
+                            <div class="rel_title">
+                                <span class="rel_title_label">
+                                    Регистрация</span>
+                            </div>
+                            <form method="post" action="" autocomplete="off">
+                                <label class="labeled-form-input">
+                                    ФИО
+                                    <input class="form-input" type="text"
+                                    name="lastName" autocomplete="off" pattern="[А-ЯЁ]{1}[А-Яа-яЁё]" placeholder="Фамилия">
+                                </label>
+                                <label class="labeled-form-input">
+                                    <input class="form-input" type="text"
+                                    name="firstName" autocomplete="off" pattern="[А-ЯЁ]{1}[А-Яа-яЁё]" placeholder="Имя">
+                                </label>
+                                <label class="labeled-form-input">
+                                    <input class="form-input" type="text"
+                                    name="user.attributes.patronymic" autocomplete="off" pattern="[А-ЯЁ]{1}[А-Яа-яЁё]" placeholder="Отчество">
+                                </label>
+                                <label class="labeled-form-input">
+                                    Электронная почта
+                                    <input class="form-input" type="text"
+                                    name="email" autocomplete="off" pattern="[A-Za-z0-9]+[@]{1}[A-Za-z0-9]+" placeholder="E-Mail">
+                                </label>
+                                <label class="labeled-form-input">
+                                    Придумайте логин и пароль
+                                    <input class="form-input" type="text"
+                                    name="username" autocomplete="off" pattern="[A-Za-z]{8,}" placeholder="Логин">
+                                </label>
+                                <label class="labeled-form-input">
+                                    <input class="form-input" type="text"
+                                    name="password" autocomplete="off" pattern="[A-Za-z0-9]{8,}" placeholder="Пароль">
+                                </label>
+                            </form>
+                        </div>
+                        <div class="auth-section">
+                        
+                        </div>
+                        <div class="auth-section">
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-                    </div>
-                </div>
-            </div>
             <footer class="footer">
                 <div class="footer__container">
-                    <div class="footer_up">
-                        <div class="about_project">
+                    <div class="footer__container-floor">
+                        <div class="footer__container-section">
                             <p>Проект</p>
                             <a href="#">О проекте</a>
                             <a href="#">Команда</a>
@@ -57,19 +104,19 @@
                             <a href="#">Отзывы</a>
                             <a href="#">Обзоры</a>
                         </div>
-                        <div class="media">
+                        <div class="footer__container-section">
                             <p>Мы в соцсетях</p>
                             <a href="#">Вконтакте</a>
                             <a href="#">Телеграм</a>
                             <a href="#">Инстаграм</a>
                         </div>
-                        <div class="contacts">
+                        <div class="footer__container-media-section">
                             <p class="footer_namer">Контактная информация</p>
                             <p class="tel">8 800 555 35 35</p>
-                            <p class="tel_exp">WhatsApp, Viber, SMS</p>
+                            <p class="tel__exp">WhatsApp, Viber, SMS</p>
                         </div>
                     </div>
-                    <div class="footer_down">
+                    <div class="footer__container-floor">
                         <p class="logo_text">SoftStart®</p>
                         <p class="CopyRight">© “СофтСтарт”, 2022</p>
                     </div>
