@@ -57,30 +57,50 @@
                                 <label class="labeled-form-input">
                                     ФИО
                                     <input class="form-input" type="text"
-                                    name="lastName" autocomplete="off" pattern="[А-ЯЁ]{1}[А-Яа-яЁё]" placeholder="Фамилия">
+                                    name="lastName" autocomplete="off" 
+                                    pattern="[А-ЯЁ].*[а-яё]" placeholder="Фамилия">
                                 </label>
                                 <label class="labeled-form-input">
                                     <input class="form-input" type="text"
-                                    name="firstName" autocomplete="off" pattern="[А-ЯЁ]{1}[А-Яа-яЁё]" placeholder="Имя">
+                                    name="firstName" autocomplete="off" 
+                                    pattern="[А-ЯЁ].*[а-яё]" placeholder="Имя">
                                 </label>
                                 <label class="labeled-form-input">
                                     <input class="form-input" type="text"
-                                    name="user.attributes.patronymic" autocomplete="off" pattern="[А-ЯЁ]{1}[А-Яа-яЁё]" placeholder="Отчество">
+                                    name="user.attributes.patronymic" autocomplete="off" 
+                                    pattern="[А-ЯЁ].*[а-яё]" placeholder="Отчество">
+                                </label>
+                                <label class="labeled-form-input">
+                                    Пол
+                                    <select name="gender" id="gender-select">
+                                        <option value=""></option>
+                                        <option value="male">Мужской</option>
+                                        <option value="female">Женский</option>
+                                    </select>
                                 </label>
                                 <label class="labeled-form-input">
                                     Электронная почта
                                     <input class="form-input" type="text"
-                                    name="email" autocomplete="off" pattern="[A-Za-z0-9]+[@]{1}[A-Za-z0-9]+" placeholder="E-Mail">
+                                    name="email" autocomplete="off" 
+                                    pattern="[A-Za-z0-9]+[@].*[a-z0-9.]+" placeholder="E-Mail">
                                 </label>
                                 <label class="labeled-form-input">
                                     Придумайте логин и пароль
                                     <input class="form-input" type="text"
-                                    name="username" autocomplete="off" pattern="[A-Za-z]{8,}" placeholder="Логин">
+                                    name="username" autocomplete="off" 
+                                    pattern="[A-Za-z]{4,}" placeholder="Логин">
                                 </label>
                                 <label class="labeled-form-input">
                                     <input class="form-input" type="text"
-                                    name="password" autocomplete="off" pattern="[A-Za-z0-9]{8,}" placeholder="Пароль">
+                                    name="password" autocomplete="off" 
+                                    pattern="[A-Za-z0-9]{8,}" placeholder="Пароль">
                                 </label>
+                                <label class="labeled-form-input">
+                                    <input class="form-input" type="text" 
+                                    name="password-confirm" autocomplete="off" 
+                                    pattern="[A-Za-z0-9]{8,}" placeholder="Повторите пароль">
+                                </label>
+
                             </form>
                         </div>
                         <div class="auth-section">
