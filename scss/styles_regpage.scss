@@ -1,0 +1,10 @@
+form {
+    >input[type=”text”],
+    >input[type=”email”],
+    >input[type=”password”] {
+
+        &:valid {
+            box-shadow: inset 0 2px 2px rgba(13, 255, 13, 0.662);
+        }
+    }
+}

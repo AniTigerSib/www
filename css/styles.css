@@ -150,7 +150,7 @@ input[type="checkbox"]:before {
 
 input:checked[type="checkbox"]:before {
     background: rgb(255, 255, 255);
-    left: 15px;
+    left: 16px;
 }
 .visible_part {
     width: 50%;

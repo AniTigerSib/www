@@ -8,10 +8,7 @@
     src: url("../fonts/Italiana-Regular.ttf");
 }
 
-@font-face {
-    font-family: 'PFBeauSansPro'
-    src: url("../fonts/PFBeauSansPro")
-}
+@import url("../fonts/PFBeauSansPro");
 
 body {
     margin: 0;
@@ -33,20 +30,15 @@ body {
     width: 100%;
 }
 
-/*.header--fixed {
-    
-}*/
-
 .header {
     /*left: 0;
-    position: fixed;
     top: 0;*/
+    position: fixed;
     z-index: 999;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
-    position: absolute;
         width: 100%;
         height: 70px;
         left: 0px;
@@ -155,7 +147,7 @@ input[type="checkbox"]:before {
 
 input:checked[type="checkbox"]:before {
     background: rgb(255, 255, 255);
-    left: 15px;
+    left: 16px;
 }
 
 .page-layout__content{
@@ -211,6 +203,68 @@ input:checked[type="checkbox"]:before {
     box-shadow: inset 0 1px 1px rgba(0,0,0,.08);
     margin-top: 5px;
     margin-bottom: 25px;
+}
+
+.form-input-select-container{
+    width: 100%;
+}
+
+.form-input-select{
+    max-width: 100%;
+    padding: 5px;
+    margin-bottom: 25px;
+}
+
+.auth-section__labeled-checkbox{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #333;
+    font-family: PFBeauSansPro,sans-serif;
+}
+
+.modal-footer{
+    margin-top: 20px;
+    box-sizing: inherit;
+    color: #333;
+    font-family: PFBeauSansPro,sans-serif;
+    
+}
+
+.modal-footer__paragraph{
+    font-size: 14px;
+}
+
+.btn-submit{
+    background-color: #6d7b99;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    font-family: PFBeauSansPro,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 27px;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    touch-action: manipulation;
+    user-select: none;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.modal-footer__link{
+    color: #428bca;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.login-page-content{
+    align-items: center;
+    display: flex; /* display: none*/
+    flex-direction: column;
+    margin: 20px;
 }
 
 .footer {
