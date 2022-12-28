@@ -1,6 +1,19 @@
 .reg_form{
     &:invalid,
     &:placeholder-shown{
-        border: 1px solid rgba(255, 0, 0, 0.477);
+        border: 1px solid rgb(190, 0, 0);
+    }
+}
+
+.notifReq{
+    margin: 0;
+    position: relative;
+    top: -20px;
+
+    &__label{
+        font-size: 12px;
+        font-weight: 400;
+        font-family: PFBeauSansPro, sans-serif;
+        color: rgba(255, 34, 34, 0.9);
     }
 }

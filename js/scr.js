@@ -1,3 +1,6 @@
+let forms = document.getElementsByTagName("form");
+let elem = document.getElementsByClassName("labeled-form-input");
+
 
 function openlogin() {
     document.getElementById('regpage').style.display = 'none';
@@ -11,6 +14,128 @@ function openregister() {
 
 clickauth.addEventListener("click", openlogin);
 clickreg.addEventListener("click", openregister);
+
+let flagMain = 1;
+let flag8 = false;
+let message2 = "Пароли должны совпадать!";
+regSubmit.addEventListener("click", function(event){
+    event.preventDefault();
+    flagMain = 1;
+    flagMain = check(flagMain);
+    console.log(flagMain);
+    const formData = new FormData(forms[0]);
+    const password = formData.get('password');
+    const passwordConf = formData.get('password-confirm');
+    if (password != passwordConf & !flag8) {
+        requieredField(elem[7], 1, message2);
+        flag8 = true;
+        flagMain = 0;
+    }
+    if (password != "" & password == passwordConf & flag8) {
+        requieredField(elem[7], 0);
+        flag8 = false;
+    }
+})
+
+function requieredField(elem, k, message) {
+    if (k == 1){
+        let check1 = document.createElement("div"),
+        check2 = document.createElement("a");
+        check1.className = "notifReq"
+        check2.className = "notifReq__label";
+        check2.innerHTML = message;
+        check1.appendChild(check2);
+        elem.appendChild(check1);
+    }
+    else{
+        console.log("Invalid");
+        elem.removeChild(elem.childNodes[3]);
+        elem.removeChild(elem.childNodes[2]);
+    }
+}
+
+let message1 = "Это обязательное поле!";
+let messageSelect = "Нельзя быть бесполым)"
+let flag1 = false;
+let flag2 = false;
+let flag3 = false;
+let flag4 = false;
+let flag5 = false;
+let flag6 = false;
+let flag7 = false;
+function check(flagMain) {
+    if (forms[0].lastName.value == "" & !flag1) {
+        requieredField(elem[0], 1, message1);
+        flag1 = true;
+        flagMain = 0;
+    }
+    if (forms[0].lastName.value != "" & flag1){
+        requieredField(elem[0], 0);
+        flag1 = false;
+    }
+
+    if (forms[0].firstName.value == "" & !flag2) {
+        console.log("Debil");
+        requieredField(elem[1], 1, message1);
+        flag2 = true;
+        flagMain = 0;
+    }
+    if (forms[0].firstName.value != "" & flag2){
+        requieredField(elem[1], 0);
+        flag2 = false;
+    }
+
+    if (forms[0].user_attributes_patronymic.value == "" & !flag3) {
+        requieredField(elem[2], 1, message1);
+        flag3 = true;
+        flagMain = 0;
+    }
+    if (forms[0].user_attributes_patronymic.value != "" & flag3){
+        requieredField(elem[2], 0);
+        flag3 = false;
+    }
+
+    if(forms[0].gender.value == "" & !flag4) {
+        requieredField(elem[3], 1, messageSelect);
+        flag4 = true;
+        flagMain = 0;
+    }
+    if(forms[0].gender.value != "" & flag4) {
+        requieredField(elem[3], 0);
+        flag4 = false;
+    }
+
+    if (forms[0].email.value == "" & !flag5) {
+        requieredField(elem[4], 1, message1);
+        flag5 = true;
+        flagMain = 0;
+    }
+    if (forms[0].email.value != "" & flag5){
+        requieredField(elem[4], 0);
+        flag5 = false;
+    }
+
+    if (forms[0].username.value == "" & !flag6) {
+        requieredField(elem[5], 1, message1);
+        flag6 = true;
+        flagMain = 0;
+    }
+    if (forms[0].username.value != "" & flag6){
+        requieredField(elem[5], 0);
+        flag6 = false;
+    }
+
+    if (forms[0].password.value == "" & !flag7) {
+        requieredField(elem[6], 1, message1);
+        flag7 = true;
+        flagMain = 0;
+    }
+    if (forms[0].password.value != "" & flag7){
+        requieredField(elem[6], 0);
+        flag7 = false;
+    }
+    return flagMain;
+}
 
 
 

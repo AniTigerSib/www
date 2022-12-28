@@ -205,6 +205,12 @@ input:checked[type="checkbox"]:before {
     margin-bottom: 25px;
 }
 
+.wrongLastName{
+    font-size: 12px;
+    font-weight: 400;
+    font-family: PFBeauSansPro, sans-serif;
+}
+
 .form-input-select-container{
     width: 100%;
 }

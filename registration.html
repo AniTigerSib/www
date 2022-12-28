@@ -33,7 +33,7 @@
 					</nav>
 					<div class="header__auth-btns">
 						<a class="header__button" href="#">Вход</a>
-						<a class="header__button" href="#">Регистрация</a>
+						<!--<a class="header__button" href="#">Регистрация</a>-->
 					</div>
                     <div class="header__dt-switch">
                         <div class="header__dt-switch__icons">
@@ -57,18 +57,18 @@
                             <form name="regForm" id="regForm" method="post" action="" autocomplete="off">
                                 <label class="labeled-form-input">
                                     ФИО
-                                    <input required class="form-input reg_form" type="text"
+                                    <input class="form-input reg_form" type="text"
                                     name="lastName" autocomplete="off" 
                                     pattern="[А-ЯЁ]{1}[а-яё]+$" placeholder="Фамилия">
                                 </label>
                                 <label class="labeled-form-input">
-                                    <input required class="form-input reg_form" type="text"
+                                    <input class="form-input reg_form" type="text"
                                     name="firstName" autocomplete="off" 
                                     pattern="[А-ЯЁ]{1}[а-яё]+$" placeholder="Имя">
                                 </label>
                                 <label class="labeled-form-input">
-                                    <input required class="form-input reg_form" type="text"
-                                    name="user.attributes.patronymic" autocomplete="off" 
+                                    <input class="form-input reg_form" type="text"
+                                    name="user_attributes_patronymic" autocomplete="off" 
                                     pattern="[А-ЯЁ]{1}[а-яё]+$" placeholder="Отчество">
                                 </label>
                                 <label class="labeled-form-input">
@@ -100,7 +100,7 @@
                                     placeholder="Пароль (Не менее 8 символов)">
                                 </label>
                                 <label required class="labeled-form-input">
-                                    <input class="form-input reg_form" id="username" type="password_repeat" 
+                                    <input class="form-input reg_form" id="username" type="password" 
                                     name="password-confirm" autocomplete="off" 
                                     pattern="[A-Za-z0-9_.]{8,}"
                                     placeholder="Повторите пароль (Пароли должны совпадать)">
@@ -113,8 +113,7 @@
                                 </label>
                                 <div class="modal-footer">
                                     <p class="modal-footer__paragraph">Необходимо указать настоящие фамилию, имя и отчество для возможности обратной связи</p>
-                                    <button class="btn-submit" id="reg-submit" type="submit">Зарегистрироваться</button>
-                                    
+                                    <button class="btn-submit" id="regSubmit" type="submit">Зарегистрироваться</button>
                                 </div>
                             </form>
                             <p class="modal-footer__paragraph">Уже есть аккаунт?
