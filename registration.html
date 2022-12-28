@@ -91,7 +91,7 @@
                                     Придумайте логин и пароль
                                     <input class="form-input reg_form" id="username" type="text"
                                     name="username" autocomplete="off" 
-                                    minlength="4" pattern="[A-Za-z]" placeholder="Логин">
+                                    pattern="[A-Za-z]{4,}" placeholder="Логин">
                                 </label>
                                 <label required class="labeled-form-input">
                                     <input class="form-input reg_form" id="password" type="password"
@@ -102,7 +102,7 @@
                                 <label required class="labeled-form-input">
                                     <input class="form-input reg_form" id="username" type="password_repeat" 
                                     name="password-confirm" autocomplete="off" 
-                                    minlength="8" maxleght="100" pattern="[A-Za-z]"
+                                    pattern="[A-Za-z0-9_.]{8,}"
                                     placeholder="Повторите пароль (Пароли должны совпадать)">
                                 </label>
                                 <label class="auth-section__labeled-checkbox">

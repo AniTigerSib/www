@@ -1,4 +1,15 @@
+var newdiv;
 
+reg-submit.onclick = function regClick() {
+    newdiv = document.createElement('div')
+      newdiv.classList.add('NewDiv');
+      document.body.appendChild(newdiv);
+      newdiv.style.border = 'solid 4px green';
+      newdiv.style.width = '100px';
+      newdiv.style.height = '100px';
+      newdiv.style.background = 'grey';
+      newdiv.innerHTML = "Это новый обьект. вставленный в ДОМ";
+}
 
 
 
