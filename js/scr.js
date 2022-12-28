@@ -1,17 +1,16 @@
-var newdiv;
 
-reg-submit.onclick = function regClick() {
-    newdiv = document.createElement('div')
-      newdiv.classList.add('NewDiv');
-      document.body.appendChild(newdiv);
-      newdiv.style.border = 'solid 4px green';
-      newdiv.style.width = '100px';
-      newdiv.style.height = '100px';
-      newdiv.style.background = 'grey';
-      newdiv.innerHTML = "Это новый обьект. вставленный в ДОМ";
+function openlogin() {
+    document.getElementById('regpage').style.display = 'none';
+    document.getElementById('loginpage').style.display = 'flex';
 }
 
+function openregister() {
+    document.getElementById('loginpage').style.display = 'none';
+    document.getElementById('regpage').style.display = 'flex';
+}
 
+clickauth.addEventListener("click", openlogin);
+clickreg.addEventListener("click", openregister);
 
 
 

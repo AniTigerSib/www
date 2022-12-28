@@ -85,7 +85,7 @@
                                     Электронная почта
                                     <input required class="form-input reg_form" type="email"
                                     name="email" autocomplete="off" 
-                                    placeholder="E-Mail">
+                                    pattern="[A-z0-9._-]+@[A-z0-9.-]+\.[A-z]{2,4}$" placeholder="E-Mail">
                                 </label>
                                 <label required class="labeled-form-input">
                                     Придумайте логин и пароль
@@ -114,11 +114,12 @@
                                 <div class="modal-footer">
                                     <p class="modal-footer__paragraph">Необходимо указать настоящие фамилию, имя и отчество для возможности обратной связи</p>
                                     <button class="btn-submit" id="reg-submit" type="submit">Зарегистрироваться</button>
-                                    <p class="modal-footer__paragraph">Уже есть аккаунт?
-                                        <a class="modal-footer__link" onclick="auth-click">Войдите</a>
-                                    </p>
+                                    
                                 </div>
                             </form>
+                            <p class="modal-footer__paragraph">Уже есть аккаунт?
+                                <button class="modal-footer__link" id="clickauth">Войдите</button>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -144,12 +145,11 @@
                                 </label>
                                 <div class="modal-footer">
                                     <button class="btn-submit" id="auth-submit" type="submit">Зарегистрироваться</button>
-                                    <p class="modal-footer__paragraph">Ещё нет аккаунта?
-                                        <a class="modal-footer__link" href="#">Зарегистрируйтесь</a>
-                                    </p>
                                 </div>
-                                
                             </form>
+                            <p class="modal-footer__paragraph">Ещё нет аккаунта?
+                                <button class="modal-footer__link" id="clickreg">Зарегистрируйтесь</button>
+                            </p>
                         </div>
                     </div>
                 </div>
