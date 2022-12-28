@@ -82,6 +82,14 @@ body {
     margin-left: 15px;
 }
 
+.header__welcome {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: PFBeauSansPro, sans-serif;
+    color: #fff;
+    margin: 0 20px;
+}
+
 .header__button {
 	align-items: center;
 	border: 1px solid #fff;
@@ -169,14 +177,8 @@ input:checked[type="checkbox"]:before {
 
 .sign_up_invite_panel{
     padding: 30px;
-    text-color: #000;
-    font-family: 'Sansation';
-    font-style: normal;
-        font-weight: 400;
-        font-size: 18px;
-}
-
-.sign_up_invite_panel button{
+    color: #000;
+    text-decoration: none;
     font-family: 'Sansation';
     font-style: normal;
         font-weight: 400;

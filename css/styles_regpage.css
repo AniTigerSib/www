@@ -82,6 +82,14 @@ body {
     margin-left: 15px;
 }
 
+.header__welcome {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: PFBeauSansPro, sans-serif;
+    color: #fff;
+    margin: 0 20px;
+}
+
 .header__button {
 	align-items: center;
 	border: 1px solid #fff;
@@ -156,7 +164,7 @@ input:checked[type="checkbox"]:before {
 
 .sign_up_container_main {
     align-items: center;
-    display: flex;
+    display: none;
     flex-direction: column;
     margin: 20px;
 }

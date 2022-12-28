@@ -13,9 +13,9 @@
     </head>
     <body>
         <div class="page-layout">
-            <div class="header"> <!--header--fixed-->
+            <div class="header">
                 <div class="header__content">
-                    <a class="header_logo" href="#">
+                    <a class="header_logo" href="index.php">
 						<img src="img/logo.png" alt="logo">
 					</a>
 					<nav class="header-navigation">
@@ -32,7 +32,7 @@
 						</ul>
 					</nav>
 					<div class="header__auth-btns">
-						<a class="header__button" href="#">Вход</a>
+					    <a class="header__button" href="registration.php">Вход</a>
 						<!--<a class="header__button" href="#">Регистрация</a>-->
 					</div>
                     <div class="header__dt-switch">
@@ -54,21 +54,21 @@
                                 <span class="rel_title_label">
                                     Регистрация</span>
                             </div>
-                            <form name="regForm" id="regForm" method="post" action="" autocomplete="off">
+                            <form name="regForm" id="regForm" method="post" action="index.php">
                                 <label class="labeled-form-input">
                                     ФИО
                                     <input class="form-input reg_form" type="text"
-                                    name="lastName" autocomplete="off" 
+                                    name="lastName" id="lastName" autocomplete="off" 
                                     pattern="[А-ЯЁ]{1}[а-яё]+$" placeholder="Фамилия">
                                 </label>
                                 <label class="labeled-form-input">
                                     <input class="form-input reg_form" type="text"
-                                    name="firstName" autocomplete="off" 
+                                    name="firstName" id="firstName" autocomplete="off" 
                                     pattern="[А-ЯЁ]{1}[а-яё]+$" placeholder="Имя">
                                 </label>
                                 <label class="labeled-form-input">
                                     <input class="form-input reg_form" type="text"
-                                    name="user_attributes_patronymic" autocomplete="off" 
+                                    name="user_attributes_patronymic" id="user_attributes_patronymic" autocomplete="off" 
                                     pattern="[А-ЯЁ]{1}[а-яё]+$" placeholder="Отчество">
                                 </label>
                                 <label class="labeled-form-input">
@@ -84,25 +84,25 @@
                                 <label class="labeled-form-input">
                                     Электронная почта
                                     <input required class="form-input reg_form" type="email"
-                                    name="email" autocomplete="off" 
+                                    name="email" id="email" autocomplete="off" 
                                     pattern="[A-z0-9._-]+@[A-z0-9.-]+\.[A-z]{2,4}$" placeholder="E-Mail">
                                 </label>
                                 <label required class="labeled-form-input">
                                     Придумайте логин и пароль
                                     <input class="form-input reg_form" id="username" type="text"
-                                    name="username" autocomplete="off" 
+                                    name="username" id="username" autocomplete="off" 
                                     pattern="[A-Za-z]{4,}" placeholder="Логин">
                                 </label>
                                 <label required class="labeled-form-input">
                                     <input class="form-input reg_form" id="password" type="password"
-                                    name="password" autocomplete="off" 
-                                    pattern="[A-Za-z0-9_.]{8,}"
+                                    name="password" id="password" autocomplete="off" 
+                                    pattern="[A-Za-z0-9_.-@]{8,}"
                                     placeholder="Пароль (Не менее 8 символов)">
                                 </label>
                                 <label required class="labeled-form-input">
-                                    <input class="form-input reg_form" id="username" type="password" 
-                                    name="password-confirm" autocomplete="off" 
-                                    pattern="[A-Za-z0-9_.]{8,}"
+                                    <input class="form-input reg_form" id="password-confirm" type="password" 
+                                    name="password-confirm" id="password-confirm" autocomplete="off" 
+                                    pattern="[A-Za-z0-9_.-@]{8,}"
                                     placeholder="Повторите пароль (Пароли должны совпадать)">
                                 </label>
                                 <label class="auth-section__labeled-checkbox">
@@ -113,7 +113,7 @@
                                 </label>
                                 <div class="modal-footer">
                                     <p class="modal-footer__paragraph">Необходимо указать настоящие фамилию, имя и отчество для возможности обратной связи</p>
-                                    <button class="btn-submit" id="regSubmit" type="submit">Зарегистрироваться</button>
+                                    <input class="btn-submit" id="regSubmit" value="Зарегистрироваться" type="submit">
                                 </div>
                             </form>
                             <p class="modal-footer__paragraph">Уже есть аккаунт?
@@ -143,7 +143,7 @@
                                     placeholder="Пароль">
                                 </label>
                                 <div class="modal-footer">
-                                    <button class="btn-submit" id="auth-submit" type="submit">Зарегистрироваться</button>
+                                    <button class="btn-submit" id="auth-submit" type="submit">Войти</button>
                                 </div>
                             </form>
                             <p class="modal-footer__paragraph">Ещё нет аккаунта?

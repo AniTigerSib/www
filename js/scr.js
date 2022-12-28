@@ -1,5 +1,10 @@
 let forms = document.getElementsByTagName("form");
 let elem = document.getElementsByClassName("labeled-form-input");
+let inputs = forms[0].getElementsByTagName("input");
+let mask1 = /^[А-ЯЁ]{1}[а-яё]+$/;
+let mask2 = /^[A-z0-9._-]+@[A-z0-9.-]+\.[A-z]{2,4}$/;
+let mask3 = /^[A-Za-z]{4,}$/;
+let mask4 = /^[A-Za-z0-9_.-@]{8,}$/;
 
 
 function openlogin() {
@@ -15,47 +20,48 @@ function openregister() {
 clickauth.addEventListener("click", openlogin);
 clickreg.addEventListener("click", openregister);
 
-let flagMain = 1;
+let flagMain = true;
 let flag8 = false;
 let message2 = "Пароли должны совпадать!";
 regSubmit.addEventListener("click", function(event){
     event.preventDefault();
-    flagMain = 1;
-    flagMain = check(flagMain);
-    console.log(flagMain);
+    flagMain = true;
+    flagMain = check();
+    checkValid();
     const formData = new FormData(forms[0]);
     const password = formData.get('password');
     const passwordConf = formData.get('password-confirm');
     if (password != passwordConf & !flag8) {
-        requieredField(elem[7], 1, message2);
+        requieredField(elem[7], 1, "reqGate8", message2);
         flag8 = true;
-        flagMain = 0;
+        flagMain = false;
     }
     if (password != "" & password == passwordConf & flag8) {
-        requieredField(elem[7], 0);
+        requieredField(elem[7], 0, "reqGate8");
         flag8 = false;
     }
+
+    console.log(flagMain);
 })
 
-function requieredField(elem, k, message) {
+function requieredField(elem, k, type, message) {
     if (k == 1){
         let check1 = document.createElement("div"),
         check2 = document.createElement("a");
-        check1.className = "notifReq"
+        check1.className = "notifReq";
+        check1.id = type;
         check2.className = "notifReq__label";
         check2.innerHTML = message;
         check1.appendChild(check2);
         elem.appendChild(check1);
     }
     else{
-        console.log("Invalid");
-        elem.removeChild(elem.childNodes[3]);
-        elem.removeChild(elem.childNodes[2]);
+        console.log(2);
+        document.getElementById(type).removeChild(document.getElementById(type).childNodes[0]);
+        document.getElementById(type).remove();
     }
 }
 
-let message1 = "Это обязательное поле!";
-let messageSelect = "Нельзя быть бесполым)"
 let flag1 = false;
 let flag2 = false;
 let flag3 = false;
@@ -63,78 +69,147 @@ let flag4 = false;
 let flag5 = false;
 let flag6 = false;
 let flag7 = false;
-function check(flagMain) {
-    if (forms[0].lastName.value == "" & !flag1) {
-        requieredField(elem[0], 1, message1);
-        flag1 = true;
-        flagMain = 0;
+let message1 = "Это обязательное поле!";
+let messageSelect = "Нельзя быть бесполым)";
+function check() {
+    let flagMain = false;
+    for(let i = 0; i < 7; i++){
+        console.log(inputs[i].value);
     }
-    if (forms[0].lastName.value != "" & flag1){
-        requieredField(elem[0], 0);
-        flag1 = false;
+    if (inputs[0].value == "" & !flag1){
+        requieredField(elem[0], 1, "reqGate1", message1); //Фамилия
+        flag1 = 1;
     }
-
-    if (forms[0].firstName.value == "" & !flag2) {
-        console.log("Debil");
-        requieredField(elem[1], 1, message1);
-        flag2 = true;
-        flagMain = 0;
-    }
-    if (forms[0].firstName.value != "" & flag2){
-        requieredField(elem[1], 0);
-        flag2 = false;
+    if (inputs[0].value != "" & flag1){
+        requieredField(elem[0], 0, "reqGate1");
+        flag1 = 0;
     }
 
-    if (forms[0].user_attributes_patronymic.value == "" & !flag3) {
-        requieredField(elem[2], 1, message1);
-        flag3 = true;
-        flagMain = 0;
+    if (inputs[1].value == "" & !flag2){
+        requieredField(elem[1], 1, "reqGate2", message1); //Имя
+        flag2 = 1;
     }
-    if (forms[0].user_attributes_patronymic.value != "" & flag3){
-        requieredField(elem[2], 0);
-        flag3 = false;
-    }
-
-    if(forms[0].gender.value == "" & !flag4) {
-        requieredField(elem[3], 1, messageSelect);
-        flag4 = true;
-        flagMain = 0;
-    }
-    if(forms[0].gender.value != "" & flag4) {
-        requieredField(elem[3], 0);
-        flag4 = false;
+    if (inputs[1].value != "" & flag2){
+        requieredField(elem[1], 0, "reqGate2");
+        flag2 = 0;
     }
 
-    if (forms[0].email.value == "" & !flag5) {
-        requieredField(elem[4], 1, message1);
-        flag5 = true;
-        flagMain = 0;
+    if (inputs[2].value == "" & !flag3){
+        requieredField(elem[2], 1, "reqGate3", message1); //Отчество
+        flag3 = 1;
     }
-    if (forms[0].email.value != "" & flag5){
-        requieredField(elem[4], 0);
-        flag5 = false;
-    }
-
-    if (forms[0].username.value == "" & !flag6) {
-        requieredField(elem[5], 1, message1);
-        flag6 = true;
-        flagMain = 0;
-    }
-    if (forms[0].username.value != "" & flag6){
-        requieredField(elem[5], 0);
-        flag6 = false;
+    if (inputs[2].value != "" & flag3){
+        requieredField(elem[2], 0, "reqGate3");
+        flag3 = 0;
     }
 
-    if (forms[0].password.value == "" & !flag7) {
-        requieredField(elem[6], 1, message1);
-        flag7 = true;
-        flagMain = 0;
+    if(forms[0].gender.value == "" & !flag4){
+        requieredField(elem[3], 1, "reqGate4", messageSelect); //Пол
+        flag4 = 1;
     }
-    if (forms[0].password.value != "" & flag7){
-        requieredField(elem[6], 0);
-        flag7 = false;
+    if(forms[0].gender.value != "" & flag4){
+        requieredField(elem[3], 0, "reqGate4");
+        flag4 = 0;
     }
+    
+    if (inputs[3].value == "" & !flag5) {
+        requieredField(elem[4], 1, "reqGate5", message1); //Почта
+        flag5 = 1;
+    }
+    if (inputs[3].value != "" & flag5){
+        requieredField(elem[4], 0, "reqGate5");
+        flag5 = 0;
+    }
+
+    if (inputs[4].value == "" & !flag6) {
+        requieredField(elem[5], 1, "reqGate6", message1); //Логин 
+        flag6 = 1;
+    }
+    if (inputs[4].value != "" & flag6){
+        requieredField(elem[5], 0, "reqGate6");
+        flag6 = 0;
+    }
+
+    if (inputs[5].value == "" & !flag7) {
+        requieredField(elem[6], 1, "reqGate7", message1); //Пароль
+        flag7 = 1;
+    }
+    if (inputs[5].value != "" & flag7){
+        requieredField(elem[6], 0, "reqGate7");
+        flag7 = 0;
+    }
+    if (forms[0].lastName.value != "" & forms[0].firstName.value != "" & forms[0].user_attributes_patronymic.value != "" & forms[0].gender.value != "" & forms[0].email.value != "" & forms[0].username.value != "" & forms[0].password.value != "") {
+        flagMain = true;
+    }
+    console.log(flagMain);
     return flagMain;
+}
+
+let equiv1 = false;
+let equiv2 = false;
+let equiv3 = false;
+let equiv4 = false;
+let equiv5 = false;
+let equiv6 = false;
+let equiv7 = false;
+let message3 = "Необходимо соблюдать формат (латиница, без пробелов, с заглавной буквы)!";
+let message4 = "Неверный формат адреса электронной почты!";
+let message5 = "Разрешённые символы: латиница (не менее 4 символов)!";
+let message6 = "Разрешённые символы: латиница, цифры, _.-@ (не менее 4 символов)!";
+function checkValid() {
+    if (!mask1.test(document.getElementById("lastName").value) & !equiv1 & !flag1) {
+        requieredField(elem[0], 1, "patternGate1", message3);
+        equiv1 = true;
+    }
+    if(mask1.test(document.getElementById("lastName").value) & equiv1) {
+        requieredField(elem[0], 0, "patternGate1");
+        equiv1 = false;
+    }
+
+    if (!mask1.test(document.getElementById("firstName").value) & !equiv2 & !flag2) {
+        requieredField(elem[1], 1, "patternGate2", message3);
+        equiv2 = true;
+    }
+    if(mask1.test(document.getElementById("firstName").value) & equiv2) {
+        requieredField(elem[1], 0, "patternGate2");
+        equiv2 = false;
+    }
+
+    if (!mask1.test(document.getElementById("user_attributes_patronymic").value) & !equiv3 & !flag3) {
+        requieredField(elem[2], 1, "patternGate3", message3);
+        equiv3 = true;
+    }
+    if(mask1.test(document.getElementById("user_attributes_patronymic").value) & equiv3) {
+        requieredField(elem[2], 0, "patternGate3");
+        equiv3 = false;
+    }
+
+    if (!mask2.test(document.getElementById("email").value) & !equiv4 & !flag5) {
+        requieredField(elem[4], 1, "patternGate4", message4);
+        equiv4 = true;
+    }
+    if(mask2.test(document.getElementById("email").value) & equiv4) {
+        requieredField(elem[4], 0, "patternGate4");
+        equiv4 = false;
+    }
+
+    if (!mask3.test(document.getElementById("username").value) & !equiv5 & !flag6) {
+        requieredField(elem[5], 1, "patternGate5", message5);
+        equiv5 = true;
+    }
+    if(mask3.test(document.getElementById("username").value) & equiv5) {
+        requieredField(elem[5], 0, "patternGate5");
+        equiv5 = false;
+    }
+
+    if (!mask4.test(document.getElementById("password").value) & !equiv6 & !flag7) {
+        requieredField(elem[6], 1, "patternGate6", message6);
+        equiv6 = true;
+    }
+    if(mask4.test(document.getElementById("password").value) & equiv6) {
+        requieredField(elem[6], 0, "patternGate6");
+        equiv6 = false;
+    }
 }
 
 
