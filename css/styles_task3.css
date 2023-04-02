@@ -1,0 +1,67 @@
+#test {
+    margin-top: 100px;
+}
+
+#test p {
+    color: green;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+/* Задание 3 */
+
+#test h2 {
+    text-align: center;
+    color: red;
+}
+/* Задание 4 */
+
+.bbb {
+    background-color: aqua;
+}
+/* Здание 5 */
+
+#test .bbb {
+    padding: 30px;
+}
+/* Задание 6 */
+
+p.bbb {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+/* Задание 7 */
+
+h2.bbb {
+    font-size: small;
+}
+/* Задание 8 */
+
+#test p.bbb {
+    font-weight: 800;
+}
+/* Задание 9 */
+
+div h2, div p {
+    width: max-content;
+}
+/* Задание 10 */
+
+.bbb, .xxx {
+    text-align: right;
+}
+/* Задание 11 */
+
+p.bbb, h2.xxx {
+    
+}
+
+#test p.bbb, #test p.xxx {}
+
+.fff * {}
+
+.fff p {}
+
+p.fff {}
+
+.fff .bbb {}
+
+.fff h2.bbb {}
