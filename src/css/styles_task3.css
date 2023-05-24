@@ -51,17 +51,32 @@ div h2, div p {
 /* Задание 11 */
 
 p.bbb, h2.xxx {
-    
+    font-size: 20px;
+}
+/* Задание 12 */
+
+#test p.bbb, #test p.xxx {
+    background: rgba(0.5, 1, 0.3, 0.2);
+}
+/* Задание 13 */
+
+.fff * {
+    color: coral;
+}
+/* Задание 14 */
+
+.fff p {
+    background: rgba(40, 137, 114, 0.712);
+}
+/* Задание 15 */
+
+p.fff {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
 }
 
-#test p.bbb, #test p.xxx {}
-
-.fff * {}
-
-.fff p {}
-
-p.fff {}
-
-.fff .bbb {}
+.fff .bbb {
+    
+}
 
 .fff h2.bbb {}
